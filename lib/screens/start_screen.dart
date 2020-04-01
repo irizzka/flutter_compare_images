@@ -14,16 +14,13 @@ class _StartScreenState extends State<StartScreen> {
   final GlobalKey<FormState> _form = GlobalKey<FormState>();
   final FocusNode _secondUrl = FocusNode();
 
-  //bool _isInit = true;
-
-  // final List<String> _urlsList = <String>[];
 
   Future<void> _saveForm() async {
     final bool _isValid = _form.currentState.validate();
     if (_isValid) {
       _form.currentState.save();
       Navigator.of(context).pushNamed(HomeScreen.routeName,
-          arguments: [_imageUrlController.text, _imageUrlController2.text]);
+          arguments: <String>[_imageUrlController.text, _imageUrlController2.text]);
     }
   }
 
@@ -91,15 +88,15 @@ class _StartScreenState extends State<StartScreen> {
                   _saveForm();
                 },
               ),
-              SizedBox(
-                width: 200.0,
-                child: RaisedButton(
-                  padding: const EdgeInsets.all(10.0),
-                  child: const Text('Compare'),
-                  onPressed: () {
-                    _saveForm();
-                  },
-                ),
+              const SizedBox(
+                height: 10.0,
+              ),
+              RaisedButton(
+                padding: const EdgeInsets.all(10.0),
+                child: const Text('Compare'),
+                onPressed: () {
+                  _saveForm();
+                },
               ),
             ],
           ),

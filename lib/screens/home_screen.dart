@@ -14,7 +14,6 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     final List<String> _urlsList = ModalRoute.of(context).settings.arguments;
-    print(_urlsList);
     return Scaffold(
       appBar: AppBar(
         title: const Text('Image comparator'),
